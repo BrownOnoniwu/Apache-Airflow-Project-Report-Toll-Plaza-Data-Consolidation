@@ -6,7 +6,8 @@ This is where our project comes in. We are a team of data engineers at a data an
 Check the attached code and project file.
 
 
-![Screenshot (108)](https://github.com/BrownOnoniwu/Apache-Airflow-Project-Report-Toll-Plaza-Data-Consolidation/assets/135502525/d468fe91-9078-4fb8-a422-d12fe043ad33)
+![Airflow](https://github.com/BrownOnoniwu/Apache-Airflow-Project-Report-Toll-Plaza-Data-Consolidation/assets/135502525/4c01ed47-ee26-47de-b235-df57ae1d4485)
+
 
 
 
