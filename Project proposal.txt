@@ -1,0 +1,59 @@
+﻿Apache Airflow Project Report: Toll Plaza Data Consolidation
+31.10.2023
+
+
+Project Overview
+As a data engineer at a data analytics consulting company, the objective of this project is to decongest national highways by analyzing road traffic data from various toll plazas. Each toll plaza is operated by a different toll operator with distinct IT setups, utilizing different file formats. The project's goal is to collect, consolidate, and transform the data from these sources into a single, standardized format.
+Project Scope
+Our project scope consists of three main steps:
+* Extract data from CSV, TSV, and fixed-width files from multiple toll plazas.
+* Transform and standardize the data.
+* Consolidate the data into a single file for further analysis and processing.
+Project Architecture
+Our project leverages Apache Airflow, a powerful tool for workflow orchestration. We use Apache Airflow to create a Directed Acyclic Graph (DAG) that performs the following tasks:
+* Extract data from a CSV file.
+* Extract data from a TSV file.
+* Extract data from a fixed-width file.
+* Consolidate the extracted data into a single file.
+* Transform the consolidated data.
+Workflow Description
+The Apache Airflow DAG, named ETL_toll_data, defines the following tasks:
+* Extract data from a CSV file (extract_data_from_csv): This task reads the CSV file from the source directory and saves it as a temporary file in the destination directory.
+* Extract data from a TSV file (extract_data_from_tsv): This task reads the TSV file from the source directory and saves it as a temporary file in the destination directory.
+* Extract data from a fixed-width file (extract_data_from_fixed_width): This task reads the fixed-width file from the source directory and saves it as a temporary file in the destination directory.
+* Consolidate the extracted data into a single file (consolidate_data): This task combines the three temporary files into one consolidated file and deletes the temporary files.
+* Transform the consolidated data (transform_data): This task applies some transformations to the consolidated data, such as removing duplicates, formatting dates, and adding headers.
+Data Sources and Destinations
+Data is extracted from CSV, TSV, and fixed-width files located in the directory structure: /home/project/airflow/dags/finalassignment.
+The transformed data is saved in the same directory as transformed_data.csv.
+Technologies Used
+We use the following technologies for our project:
+* Apache Airflow for workflow orchestration: Apache Airflow is an open-source platform that allows us to programmatically create, schedule, and monitor workflows. It has a rich set of operators, hooks, sensors, and UI features that make it easy to manage complex ETL processes.
+* Bash commands for data extraction and transformation: Bash commands are simple and powerful tools for manipulating text files. We use Bash commands to read, write, concatenate, and filter files.
+Challenges Faced
+We faced some challenges in our project, such as:
+* Ensuring compatibility and consistency in data extraction from different file formats: Different file formats have different structures, delimiters, encodings, and quality issues. We had to ensure that our extraction process can handle these variations and produce consistent output.
+* File format inconsistencies, delimiter variations, and data quality issues: Some of the source files had inconsistent formats, such as missing or extra columns, different delimiters, or corrupted data. We had to handle these cases and clean the data before consolidating it.
+* Maintaining a robust and flexible ETL pipeline: Our ETL pipeline had to be robust enough to handle errors and failures gracefully. It also had to be flexible enough to accommodate changes in the source or destination files.
+Results and Benefits
+Our project achieved the following results and benefits:
+* Successful extraction, consolidation, and transformation of data from multiple toll plazas: We were able to extract data from various file formats, consolidate them into a single file, and transform them into a standardized format.
+* Creation of a standardized data format for further analysis: We created a standardized data format that can be used for further analysis and processing by other teams or tools. The standardized format has consistent headers, columns, types, and values.
+* Improved decision-making for traffic management and congestion reduction: By analyzing the standardized data format, we can gain insights into traffic patterns, peak hours, bottlenecks, revenue generation, etc. These insights can help us make better decisions for traffic management and congestion reduction on national highways.
+Future Work
+We have some ideas for future work to improve our project, such as:
+* Implement error handling and data quality checks in the DAG: We can add some error handling and data quality checks in the DAG to ensure that the ETL process runs smoothly and produces valid output. For example, we can use sensors to check if the source files exist, operators to validate the data schema, and hooks to send alerts or notifications in case of failures.
+* Expand the project to include more toll plazas and formats: We can expand the project to include more toll plazas and formats, such as JSON, XML, or Parquet. This will increase the coverage and scope of our analysis and provide more comprehensive insights.
+* Automate the DAG execution on a regular schedule: We can automate the DAG execution on a regular schedule, such as daily, weekly, or monthly. This will ensure that the data is always up-to-date and ready for analysis.
+* Integrate with data analysis and visualization tools for real-time monitoring: We can integrate our project with data analysis and visualization tools, such as Power BI, Tableau, or Grafana. This will enable us to create dashboards and reports that can display real-time metrics and trends on traffic management and congestion reduction.
+Lessons Learned
+We learned some valuable lessons from our project, such as:
+* The importance of standardized data formats for analysis and decision-making: Standardized data formats are essential for analysis and decision-making. They ensure that the data is consistent, reliable, and easy to understand. They also enable interoperability and integration with other tools and systems.
+* The flexibility and power of Apache Airflow in managing ETL workflows: Apache Airflow is a flexible and powerful tool for managing ETL workflows. It allows us to create, schedule, and monitor workflows programmatically. It also provides a rich set of features and functionalities that make it easy to handle complex ETL processes.
+* Dealing with challenges in data extraction and transformation: Data extraction and transformation are challenging tasks that require careful attention and planning. We have to deal with various issues, such as file format inconsistencies, delimiter variations, data quality issues, etc. We have to use appropriate tools and techniques to handle these issues and produce clean and consistent output.
+Conclusion
+The Apache Airflow project for consolidating toll plaza data has successfully addressed the challenge of managing data from various sources with different formats. The project paves the way for improved traffic management and congestion reduction on national highways. The project demonstrates the effectiveness of Apache Airflow in managing complex data engineering workflows. It can serve as a model for similar data consolidation and transformation tasks in various domains.
+Recommendations
+Based on our project experience, we have some recommendations for other organizations that want to undertake similar projects:
+* Adopt Apache Airflow for ETL processes: Apache Airflow is a great tool for ETL processes. It offers many benefits, such as programmability, scalability, reliability, extensibility, etc. It can help you create, schedule, and monitor ETL workflows efficiently and effectively.
+* Emphasize data standardization: Data standardization is crucial for analysis and decision-making. It ensures that the data is consistent, reliable, and easy to understand. It also enables interoperability and integration with other tools and systems. You should emphasize data standardization in your ETL processes and adopt common standards and best practices.
